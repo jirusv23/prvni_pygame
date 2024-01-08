@@ -11,4 +11,9 @@ while True:
             pygame.quit()
             sys.exit()
     
+    okno.fill((0, 255, 255))
+    
+    pygame.draw.rect(okno, (0, 0, 0), (300, 200, 50, 50))
+    pygame.draw.ellipse(okno, (255, 255, 255), (400, 300, 50, 50))
+    
     pygame.display.update()
