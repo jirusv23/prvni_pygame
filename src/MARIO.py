@@ -47,6 +47,7 @@ while True: #ZAKLAD
             i -= 1
             pozice_ctverce_y -= 0.25
             zkouškaHorizontalníhoPohybu()
+            kontrolaZdi()
             update()
 
 
@@ -55,11 +56,13 @@ while True: #ZAKLAD
     if pozice_ctverce_y < 0: #HORNÍ STRANA
         pozice_ctverce_y = 0
     
-    if pozice_ctverce_x >= rozliseni_okna[0] - velikost_ctverce_x: #PRAVA
-        pozice_ctverce_x = rozliseni_okna[0] - velikost_ctverce_x
-    if pozice_ctverce_y >= rozliseni_okna[1] - velikost_ctverce_y: #DOLNI STRANA
-        pozice_ctverce_y = rozliseni_okna[1] - velikost_ctverce_y
-
+    def kontrolaZdi():
+        global pozice_ctverce_x, pozice_ctverce_y
+        if pozice_ctverce_x >= rozliseni_okna[0] - velikost_ctverce_x: #PRAVA
+            pozice_ctverce_x = rozliseni_okna[0] - velikost_ctverce_x
+        if pozice_ctverce_y >= rozliseni_okna[1] - velikost_ctverce_y: #DOLNI STRANA
+            pozice_ctverce_y = rozliseni_okna[1] - velikost_ctverce_y
+    kontrolaZdi()
 
     '''try: okno.fill(barva_okna) #barva okna
     except pygame.error: #prevents error
