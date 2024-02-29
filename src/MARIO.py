@@ -31,8 +31,8 @@ while True: #ZAKLAD
     
     if stiknute_klavesy[pygame.K_ESCAPE]: #pokuď escape tak quit
         pygame.quit()
-
-
+        sys.exit()
+    
 # POHYB
     def zkouškaHorizontalníhoPohybu():    
         global pozice_ctverce_x
@@ -49,7 +49,7 @@ while True: #ZAKLAD
             zkouškaHorizontalníhoPohybu()
             kontrolaZdi()
             update()
-
+    
 
     if pozice_ctverce_x < 0: #LEVA STRANA
         pozice_ctverce_x = 0
@@ -64,9 +64,7 @@ while True: #ZAKLAD
             pozice_ctverce_y = rozliseni_okna[1] - velikost_ctverce_y
     kontrolaZdi()
 
-    '''try: okno.fill(barva_okna) #barva okna
-    except pygame.error: #prevents error
-        break'''
+    
 
 
     if (pozice_ctverce_y + velikost_ctverce_y) < rozliseni_okna[1]: #každej frame posune čtverec dolu kdyz je ve vzduchu
